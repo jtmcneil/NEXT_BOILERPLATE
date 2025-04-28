@@ -6,7 +6,7 @@ import Link from "next/link";
 export default async function Home() {
     const session = await auth();
     return (
-        <div className="flex flex-col h-full justify-center items-center px-72 py-24">
+        <div className="flex flex-col h-full justify-center items-center px-8 md:px-32 lg:px-64 xl:px-72 py-24">
             {/* <MdOutlineWifi className=" text-gray-200 text-5xl rotate-45" /> */}
             <h1 className=" text-4xl font-bold pb-6">
                 ⚠️ CONSTRUCTION ZONE ⚠️
@@ -63,7 +63,7 @@ export default async function Home() {
                     </div>
                 </section>
 
-                <section>
+                <section className="flex flex-col gap-4">
                     <h2 className="text-2xl">Get Started</h2>
                     <div className="flex flex-col gap-4">
                         <h3 className="text-xl">.env</h3>
@@ -115,33 +115,34 @@ export default async function Home() {
                         </ul>
                     </div>
                 </section>
-                <section>
+                <section className="flex flex-col gap-4">
                     <h2 className="text-2xl">Examples</h2>
-                    <div className="flex flex-col gap-4">
-                        <h3 className="text-xl">Auth</h3>
-
-                        {session?.user && (
-                            <>
-                                <div className="">
-                                    <p>You are signed in</p>
-                                    <p>
-                                        Email address:{" "}
-                                        <b>{session.user.email}</b>
-                                    </p>
-                                </div>
-                                <SignOutButton />
-                            </>
-                        )}
-                        {!session?.user && (
-                            <>
-                                <div className="pb-2">
-                                    <p>
-                                        You are <b>not</b> signed in
-                                    </p>
-                                </div>
-                                <SignInButton />
-                            </>
-                        )}
+                    <div>
+                        <div className="flex flex-col gap-2">
+                            <h3 className="text-xl">Auth</h3>
+                            {session?.user && (
+                                <>
+                                    <div>
+                                        <p>You are signed in</p>
+                                        <p>
+                                            Email address:{" "}
+                                            <b>{session.user.email}</b>
+                                        </p>
+                                    </div>
+                                    <SignOutButton />
+                                </>
+                            )}
+                            {!session?.user && (
+                                <>
+                                    <div>
+                                        <p>
+                                            You are <b>not</b> signed in
+                                        </p>
+                                    </div>
+                                    <SignInButton />
+                                </>
+                            )}
+                        </div>
                     </div>
                 </section>
             </div>
