@@ -22,7 +22,7 @@ export class ApiError extends Error {
 
 // Error 400
 export class BadRequestError extends ApiError {
-    constructor(message: string) {
+    constructor(message: string = "Bad Request") {
         super(message, 400);
         Object.setPrototypeOf(this, BadRequestError.prototype);
     }
@@ -30,7 +30,7 @@ export class BadRequestError extends ApiError {
 
 // Error 401
 export class UnauthorizedError extends ApiError {
-    constructor(message: string) {
+    constructor(message: string = "Unauthorized") {
         super(message, 401);
         Object.setPrototypeOf(this, UnauthorizedError.prototype);
     }
@@ -38,7 +38,7 @@ export class UnauthorizedError extends ApiError {
 
 // Error 402
 export class PaymentRequiredError extends ApiError {
-    constructor(message: string) {
+    constructor(message: string = "Payment Required") {
         super(message, 402);
         Object.setPrototypeOf(this, PaymentRequiredError.prototype);
     }
@@ -46,7 +46,7 @@ export class PaymentRequiredError extends ApiError {
 
 // Error 403
 export class ForbiddenError extends ApiError {
-    constructor(message: string) {
+    constructor(message: string = "Forbidden") {
         super(message, 403);
         Object.setPrototypeOf(this, ForbiddenError.prototype);
     }
@@ -54,7 +54,7 @@ export class ForbiddenError extends ApiError {
 
 // Error 404
 export class NotFoundError extends ApiError {
-    constructor(message: string) {
+    constructor(message: string = "Not Found") {
         super(message, 404);
         Object.setPrototypeOf(this, NotFoundError.prototype);
     }
@@ -66,7 +66,7 @@ export class NotFoundError extends ApiError {
 
 // Error 500
 export class InternalServerError extends ApiError {
-    constructor(message: string) {
+    constructor(message: string = "Internal Server Error") {
         super(message, 500);
         Object.setPrototypeOf(this, InternalServerError.prototype);
     }
@@ -74,7 +74,7 @@ export class InternalServerError extends ApiError {
 
 // Error 501
 export class NotImplementedError extends ApiError {
-    constructor(message: string = "This is not yet implemented") {
+    constructor(message: string = "Not Implemented") {
         super(message, 501);
         Object.setPrototypeOf(this, NotImplementedError.prototype);
     }
