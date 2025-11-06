@@ -1,24 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a custom [Next.js](https://nextjs.org) boilerplate project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). Use this boilerplate to accelerate your dev of custom web apps!
 
 ## Getting Started
 
-First, run the development server:
+### Repository Setup
+
+First, clone into a fresh new git repo:
+
+```bash
+mkdir PROJECT_NAME
+git clone https://github.com/jtmcneil/NEXT_BOILERPLATE.git PROJECT_NAME/
+cd PROJECT_NAME
+rm -rf .git
+git init
+```
+
+Now you have a brand new git repo!
+
+Next, update the project name / description in your `package.json` and install the dependencies:
+
+```bash
+npm install
+```
+
+### Running the Dev Server
+
+You can now run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Welcome to your new app!**
+
+### Setting Environment Variables
+
+Create a `.env` file in the root directory
+
+To use the built in **Auth JS** functinoality, add the below variables:
+
+`AUTH_SECRET` or just run npm exec auth secret (may place the secret in a .env.local file)
+`AUTH_RESEND_KEY` get this one from [resend](https://resend.com/) to enable email sending
+
+To connect to your **Postgres DB**, add the below variable:
+
+`USER_DATABASE_URL` set this to your postgres db connection string (try [neon](https://neon.tech//))
+
+## Features
+
+[Auth JS](https://authjs.dev/) with email only authentication
+[Prisma ORM](https://www.prisma.io/docs) ready to connect to your database
+[Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite) for easy in-line styling and reponsive design
+[Shadcn](https://ui.shadcn.com/) for some basic components to get you started
+[next/font](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
 
